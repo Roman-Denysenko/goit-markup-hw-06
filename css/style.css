@@ -662,14 +662,14 @@ h6 {
 }
 
 .footer-address {
-  margin-top: 45px;
+  margin-top: 65px;
   margin-bottom: 46px;
   width: 230px;
 }
 
 .social {
   margin-left: 69px;
-  margin-top: 57px;
+  margin-top: 77px;
   width: 206px;
 
   color: var(--third-color-text);
@@ -687,6 +687,79 @@ h6 {
 
 .footer-bloks {
   display: flex;
+}
+
+.subscription {
+  margin-left: 94px;
+  margin-top: 77px;
+}
+
+.subscription p {
+  margin: 0;
+  padding: 0;
+}
+
+.subscription .footer-form-text {
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--third-color-text);
+}
+
+.footer-lable {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-input {
+  margin-right: 9px;
+  background-color: #2f303a;
+  height: 50px;
+  width: 358px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.footer-mail {
+  position: relative;
+}
+
+.btn-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: transparent;
+}
+
+.btn-footer p {
+  margin-right: 10px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.87;
+  color: var(--third-color-text);
+}
+
+.input-btn-foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dbr {
@@ -845,6 +918,7 @@ h6 {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
+  transition: opacity var(--main-time) var(--main-cubic);
 }
 
 .backdrop.is-hidden {
@@ -914,6 +988,12 @@ h6 {
 
 .form-label {
   position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(42px, 12px);
+  transition: transform var(--main-time) var(--main-cubic),
+    color var(--main-time) var(--main-cubic);
+
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -926,15 +1006,39 @@ h6 {
   width: 100%;
   height: 40px;
   margin-bottom: 28px;
+  padding-left: 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   cursor: pointer;
   border-radius: 4px;
+}
+
+.form-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(16px, 50%);
+  transition: fill var(--main-time) var(--main-cubic);
+
+  width: 18px;
+  height: 18px;
+}
+
+.form-input:focus ~ .form-icon,
+.form-input:not(:placeholder-shown) ~ .form-icon {
+  fill: var(--accent-color);
+}
+
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+  transform: translate(16px, -20px);
+  color: var(--accent-color);
 }
 
 .coments {
   resize: none;
   width: 100%;
   height: 120px;
+
   margin-bottom: 20px;
   font-style: normal;
   font-weight: normal;
@@ -946,6 +1050,29 @@ h6 {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.text-coments {
+  position: absolute;
+  transition: transform var(--main-time) var(--main-cubic),
+    color var(--main-time) var(--main-cubic);
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: var(--second-color-text);
+  top: 0;
+  left: 0;
+  transform: translate(16px, 12px);
+}
+
+.coments:focus + .text-coments,
+.coments:not(:placeholder-shown) + .text-coments {
+  transform: translate(16px, -20px);
+  color: var(--accent-color);
+}
+
 .security-text {
   font-style: normal;
   font-weight: normal;
@@ -955,6 +1082,35 @@ h6 {
 
   color: #757575;
 }
+
+.checkbox-security {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.security-text::before {
+  content: '';
+  display: inline-flex;
+  height: 16px;
+  width: 16px;
+  margin-right: 7px;
+  border: 3px solid var(--main-color-text);
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  transition: background-color var(--main-time) var(--main-cubic),
+    background-image var(--main-time) var(--main-cubic);
+}
+
+.checkbox-security:checked ~ .security-text::before {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-image: url(../image/checkbox.svg);
+  background-size: contain;
+  box-sizing: border-box;
+}
+
 .security-link {
   font-style: normal;
   font-weight: normal;
