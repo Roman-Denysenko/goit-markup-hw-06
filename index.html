@@ -561,19 +561,22 @@
             </div>
 
             <div class="field-wrapper">
-              <label class="label-coments">
+              
                 <textarea
                   name="Coments"
-                  id=""
+                  id=area-coments"
                   placeholder=" "
                   class="coments"
                 ></textarea>
-                <span class="text-coments"> Комментарий</span>
-              </label>
+                <label for="area-coments" class="label-coments text-coments">
+                  Комментарий
+                </label>
+                
+                
             </div>
             <div class="security-wrapper">
               <label class="security">
-                <input type="checkbox" class="checkbox-security" />
+                <input type="checkbox" name="checkbox-security" class="checkbox-security" />
                 <span class="security-text">
                   Соглашаюсь с рассылкой и принимаю</span
                 >
@@ -684,7 +687,8 @@
           </label>
           </div>
           <button type="submit" class="btn-footer">
-            <p> Подписаться</p>
+             
+           <span class="btn-footer-text"> Подписаться</span>
             <svg class="footer-plane" width="24px" height="24px">
               <use href="./image/sprite.svg#plane"></use>
             </svg>
