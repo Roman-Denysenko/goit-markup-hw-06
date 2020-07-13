@@ -932,7 +932,6 @@ h6 {
 }
 
 .backdrop.is-hidden {
-  /* opacity: 0;*/
   transform: scale(0);
   pointer-events: none;
 }
